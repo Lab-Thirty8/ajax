@@ -1,7 +1,7 @@
  function makeRequest() {
       const http = new XMLHttpRequest();      
       http.onreadystatechange = favouriteThings;  
-      http.open('GET', 'favouritethings.json', true);      
+      http.open('GET', 'data', true);      
       http.send();
     };
     function favouriteThings() {
