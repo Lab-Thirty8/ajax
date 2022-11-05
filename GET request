@@ -1,0 +1,18 @@
+ function makeRequest() {
+      const http = new XMLHttpRequest();      
+      http.onreadystatechange = favouriteThings;  
+      http.open('GET', 'favouritethings.json', true);      
+      http.send();
+    };
+    function favouriteThings() {
+      if (this.readyState === 200 && this.status === 200) {    
+        const response = JSON.parse(this.responseText);
+          document.getElementById('demo').innerHTML = 
+            "Name: " + response.name + "<br>" + 
+            "Favourite colour: " + response.favouriteColor + "<br>" +
+            "Awesome shoes: " + response.shoes;                          
+        } else {
+          alert('error with request');
+        }
+      }  
+    }; 
